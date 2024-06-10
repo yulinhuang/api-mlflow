@@ -5,15 +5,15 @@
 
 from fastapi                          import APIRouter, HTTPException
 
-from handler.handler                    import SimpleHandler
-from utils                              import log_config
-from models.inputs.text                 import TextInput
+from app.handler.handler                    import SimpleHandler
+from app.utils                              import log_config
+from app.models.inputs.text                 import TextInput
 
 router = APIRouter(
     prefix="/predict",
 )
 
-handler = SimpleHandler(model_name='sk-learn-multinomialnb-model', model_version='2')
+handler = SimpleHandler(model_name='20news-test', model_version='5')
 log = log_config.getLogger(__name__)
 
 

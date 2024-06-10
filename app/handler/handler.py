@@ -7,9 +7,9 @@ from abc                        import ABC, abstractmethod
 from fastapi                    import HTTPException
 import pandas as pd
 
-from handler.model_connector        import ModelConnector
-from models.inputs.text             import TextInput
-from utils                          import log_config
+from app.handler.model_connector        import ModelConnector
+from app.models.inputs.text             import TextInput
+from app.utils                          import log_config
 
 
 log = log_config.getLogger(__name__)
@@ -46,7 +46,7 @@ class SimpleHandler(AbstractHandler):
     def handle(self, textInput: TextInput):
         """
             Core method of the handler class.
-            Handle the given serializedObjectList.
+            Handle the given textInput.
         """
         log.info('Handling the request')
         print(type(textInput))
