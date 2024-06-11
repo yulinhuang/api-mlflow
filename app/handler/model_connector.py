@@ -29,7 +29,8 @@ class ModelConnector(AbstractModelConnector):
 
     def get_predictor(
             self,
-            model_name: str, model_version: str
+            model_name: str, 
+            model_version: str
         ) -> mlflow.pyfunc.PyFuncModel:
         """
         This function fetches a trained machine learning model from the MLflow
@@ -46,7 +47,6 @@ class ModelConnector(AbstractModelConnector):
             Exception: If the model fetching fails, an exception is raised with an
             error message.
         """
-        ########## TODO: Setup MLFLOW TRACKING URI and S3 Credential ##########
 
         model = mlflow.pyfunc.load_model(
             model_uri=f"models:/{model_name}/{model_version}"
